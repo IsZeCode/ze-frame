@@ -3,24 +3,22 @@
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
+    <!-- 父项-->
     <parent>
         <groupId>com.ze</groupId>
-        <!--   模块名字-->
         <artifactId>ze-frame</artifactId>
         <version>1.0-SNAPSHOT</version>
     </parent>
 
+    <artifactId>ze-common-web</artifactId>
+
     <dependencies>
-        <!--  导入common-web 模块 -->
         <dependency>
-            <groupId>com.ze</groupId>
-            <artifactId>ze-common-web</artifactId>
-            <version>1.0-SNAPSHOT</version>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-web</artifactId>
         </dependency>
     </dependencies>
 
-    <!--  工件id  -->
-    <artifactId>ze-sys</artifactId>
 
     <properties>
         <maven.compiler.source>17</maven.compiler.source>
