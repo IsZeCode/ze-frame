@@ -1,5 +1,7 @@
 package com.ze.config;
 
+import com.baomidou.mybatisplus.extension.plugins.MybatisPlusInterceptor;
+import com.baomidou.mybatisplus.extension.plugins.inner.PaginationInnerInterceptor;
 import com.ze.intecepter.SqlBeautyInterceptor;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;
 import org.springframework.context.annotation.Bean;
@@ -15,4 +17,17 @@ public class MybatisConfiguration {
     public SqlBeautyInterceptor sqlBeautyInterceptor() {
         return new SqlBeautyInterceptor();
     }
+
+
+    /**
+     * 分页插件
+     * @return
+     */
+    @Bean
+    public MybatisPlusInterceptor mybatisPlusInterceptor() {
+        MybatisPlusInterceptor mybatisPlusInterceptor = new MybatisPlusInterceptor();
+        mybatisPlusInterceptor.addInnerInterceptor(new PaginationInnerInterceptor());
+        return mybatisPlusInterceptor;
+    }
+
 }
