@@ -10,7 +10,8 @@
     <packaging>pom</packaging>
     <modules>
         <module>ze-sys</module>
-        <module>ze-common-web</module>
+        <module>ze-common</module>
+        <module>ze-common/ze-common-web</module>
     </modules>
 
     <version>1.0-SNAPSHOT</version>
