@@ -1,6 +1,7 @@
 package com.ze.sys.collection;
 
 
+import com.ze.bean.Result;
 import com.ze.sys.entity.dto.UserDto;
 import com.ze.sys.entity.req.UserReq;
 import com.ze.sys.service.UserService;
@@ -18,10 +19,10 @@ public class UserController {
     private UserService userService;
 
     @PostMapping("/addUser")
-    public Integer addUser(@RequestBody UserReq userReq) {
+    public Result addUser(@RequestBody UserReq userReq) {
         UserDto userDto = new UserDto();
         BeanUtils.copyProperties(userReq, userDto);
-        int count = userService.addUser(userDto);
-        return count;
+        int i = 1 / 0;
+        return Result.ok(userService.addUser(userDto));
     }
 }
