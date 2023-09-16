@@ -20,4 +20,10 @@ public class UserServiceImpl implements UserService {
         int count = userMapper.insert(userPo);
         return count;
     }
+
+    @Override
+    public int deleteUser(Integer id) {
+        int count = userMapper.deleteById(id);
+        return count;
+    }
 }

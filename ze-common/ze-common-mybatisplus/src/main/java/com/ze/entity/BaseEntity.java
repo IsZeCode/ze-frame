@@ -2,6 +2,7 @@ package com.ze.entity;
 
 import com.baomidou.mybatisplus.annotation.FieldFill;
 import com.baomidou.mybatisplus.annotation.TableField;
+import com.baomidou.mybatisplus.annotation.TableLogic;
 import lombok.Data;
 
 import java.io.Serializable;
@@ -21,6 +22,10 @@ public class BaseEntity implements Serializable {
     @TableField(fill = FieldFill.UPDATE)
     private Date updateTime;
 
+    /**
+     * 逻辑删除
+     */
+    @TableLogic
     @TableField(fill = FieldFill.INSERT)
     private Integer deleteFlag;
 
