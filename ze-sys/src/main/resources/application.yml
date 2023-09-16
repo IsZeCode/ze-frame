@@ -12,17 +12,25 @@ spring:
       min-idle: 20
       max-active: 100
       max-wait: 60000
+      #      打开视图
       stat-view-servlet:
         enabled: true
         url-pattern: /druid/*
         login-username: admin
         login-password: 123456
+      #      过滤sql
       filter:
         stat:
           enabled: true
           log-slow-sql: true
           slow-sql-millis: 2000
+        #        防火墙
         wall:
           enabled: true
 mybatis-plus:
   mapper-locations: classpath:mapper/*.xml
+
+#  不配置或者配置为true时会打印SQL日志  true or false
+sql:
+  beauty:
+    show: true
