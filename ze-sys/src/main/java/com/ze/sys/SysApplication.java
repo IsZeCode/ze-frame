@@ -7,11 +7,12 @@ import org.springframework.context.annotation.ComponentScan;
 
 
 /**
- * 顺带扫描别的模块的 @Bean
+ * 顺带扫描别的模块的 @Bean  扫描 XX.mapper 以下的 mapper
  */
-@ComponentScan(value = "com.ze")
 @MapperScan(value = "com.ze.*.mapper")
 @SpringBootApplication
+// 配置类扫描
+@ComponentScan(value = "com.ze")
 public class SysApplication {
     public static void main(String[] args) {
         SpringApplication.run(SysApplication.class, args);

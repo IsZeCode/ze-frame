@@ -7,21 +7,24 @@ import com.ze.sys.entity.dto.UserPageDto;
 import com.ze.sys.entity.req.UserPageReq;
 import com.ze.sys.entity.req.UserReq;
 import com.ze.sys.service.UserService;
+import io.swagger.annotations.Api;
+import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("/user")
+@Api(tags = "用户Controller")
 public class UserController {
     @Autowired
     private UserService userService;
 
     @PostMapping("/addUser")
+    @ApiOperation(value = "新增用户")
     public Result addUser(@RequestBody UserReq userReq) {
         UserDto userDto = new UserDto();
         BeanUtils.copyProperties(userReq, userDto);
-        int i = 1 / 0;
         return Result.ok(userService.addUser(userDto));
     }
 

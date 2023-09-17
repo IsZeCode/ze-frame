@@ -1,6 +1,7 @@
 package com.ze.sys.service.impl;
 
 import com.ze.page.PageResponse;
+import com.ze.sys.convert.SysUserPoConvert;
 import com.ze.sys.entity.SysUser;
 import com.ze.sys.mapper.SysUserDao;
 import com.ze.sys.entity.po.SysUserPo;
@@ -42,19 +43,15 @@ public class SysUserServiceImpl implements SysUserService {
      */
     @Override
     public PageResponse<SysUser> queryByPage(PageSysUserReq pageSysUserReq) {
-//        SysUserPo sysUserPo = PageSysUserPoConvert.INSTANCE.convertDtoToPo(pageSysUserDto);
-//
-//        PageResponse<SysUserPo> pageResponse = new PageResponse<>();
-//        pageResponse.setCurrent(pageSysUserDto.getPageNo());
-//        pageResponse.setPageSize(pageSysUserDto.getPageSize());
-//        Long pageStart = pageResponse.getPageStart();
-//        long total = this.sysUserDao.count(sysUserPo);
-//        List<SysUserPo> sysUserList = this.sysUserDao.queryAllByLimit(sysUserPo, pageStart, pageSysUserDto.getPageSize());
-//        pageResponse.setTotal(total);
-//        pageResponse.setRecords(sysUserList);
-//        return pageResponse;
-        SysUserPo sysUserPo = new SysUserPo();
-        BeanUtils.copyProperties(pageSysUserReq, sysUserPo);
+
+        /**
+         * 效率慢的问题
+         */
+//        SysUserPo sysUserPo = new SysUserPo();
+//        BeanUtils.copyProperties(pageSysUserReq, sysUserPo);
+
+        SysUserPo sysUserPo = SysUserPoConvert.INSTANCE.convertDtoToPo(pageSysUserReq);
+
         PageResponse<SysUser> pageResponse = new PageResponse<>();
         // 获取页码
         pageResponse.setCurrent(pageSysUserReq.getPageNo());

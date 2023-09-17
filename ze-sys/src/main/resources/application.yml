@@ -28,6 +28,7 @@ spring:
         wall:
           enabled: true
 mybatis-plus:
+  #  扫描xml 文件
   mapper-locations: classpath:mapper/*.xml
   global-config:
     db-config:
@@ -39,3 +40,12 @@ mybatis-plus:
 sql:
   beauty:
     show: true
+
+swagger:
+  base-package: com.ze
+  title: ze-sys 通用脚手架
+  contact-name: ze
+  contactUrl: git@github.com:IsZeCode/ze-frame.git
+  contact-email: 614695876@qq.com
+  version: 1.0版本
+  description: 开箱即用的脚手架
