@@ -10,6 +10,9 @@
         <version>1.0-SNAPSHOT</version>
     </parent>
 
+    <!--  工件id  -->
+    <artifactId>ze-sys</artifactId>
+
     <dependencies>
         <!--  导入common-web 模块 -->
         <dependency>
@@ -27,6 +30,11 @@
             <artifactId>ze-common-swagger</artifactId>
             <version>1.0-SNAPSHOT</version>
         </dependency>
+        <dependency>
+            <groupId>com.ze</groupId>
+            <artifactId>ze-common-redis</artifactId>
+            <version>1.0-SNAPSHOT</version>
+        </dependency>
 
         <!-- ============== 自己的模块要放在上面 ============== -->
 
@@ -42,9 +50,6 @@
             <version>1.4.2.Final</version>
         </dependency>
     </dependencies>
-
-    <!--  工件id  -->
-    <artifactId>ze-sys</artifactId>
 
     <properties>
         <maven.compiler.source>8</maven.compiler.source>

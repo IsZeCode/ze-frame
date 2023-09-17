@@ -27,6 +27,19 @@ spring:
         #        防火墙
         wall:
           enabled: true
+  redis:
+    host: ac9075d576cd.c.methodot.com
+    port: 31670
+    password:
+    database: 0
+    # 可以基于lettuce，也可以基于jedis
+    lettuce:
+      pool:
+        max-active: 20 # 最大连接数
+        min-idle: 0 # 最小空闲连接数
+        max-idle: 8 # 最大空闲连接数
+        max-wait: -1 # 最大等待时间，-1表示无限期等待
+
 mybatis-plus:
   #  扫描xml 文件
   mapper-locations: classpath:mapper/*.xml
