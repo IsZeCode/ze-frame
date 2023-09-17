@@ -1,5 +1,7 @@
 package com.ze.sys.entity;
 
+import com.baomidou.mybatisplus.annotation.TableLogic;
+
 import java.util.Date;
 import java.io.Serializable;
 
@@ -25,7 +27,8 @@ public class SysUser implements Serializable {
     private String updateBy;
     
     private Date updateTime;
-    
+
+    @TableLogic
     private Integer deleteFlag;
     
     private Integer version;

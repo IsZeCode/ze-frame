@@ -76,7 +76,7 @@ public interface SysUserDao {
      * @param sysUser 实例对象
      * @return 影响行数
      */
-    int update(SysUser sysUser);
+    int update(@Param("user") SysUser sysUser);
 
     /**
      * 通过主键删除数据

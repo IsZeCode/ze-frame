@@ -121,32 +121,32 @@
     <update id="update">
         update sys_user
         <set>
-            <if test="name != null and name != ''">
-                name = #{name},
+            <if test="user.name != null and user.name != ''">
+                `name` = #{user.name},
             </if>
-            <if test="age != null">
-                age = #{age},
+            <if test="user.age != null">
+                age = #{user.age},
             </if>
-            <if test="createBy != null and createBy != ''">
-                create_by = #{createBy},
+            <if test="user.createBy != null and user.createBy != ''">
+                create_by = #{user.createBy},
             </if>
-            <if test="createTime != null">
-                create_time = #{createTime},
+            <if test="user.createTime != null">
+                create_time = #{user.createTime},
             </if>
-            <if test="updateBy != null and updateBy != ''">
-                update_by = #{updateBy},
+            <if test="user.updateBy != null and user.updateBy != ''">
+                update_by = #{user.updateBy},
             </if>
-            <if test="updateTime != null">
-                update_time = #{updateTime},
+            <if test="user.updateTime != null">
+                update_time = #{user.updateTime},
             </if>
-            <if test="deleteFlag != null">
-                delete_flag = #{deleteFlag},
+            <if test="user.deleteFlag != null">
+                delete_flag = #{user.deleteFlag},
             </if>
-            <if test="version != null">
-                version = #{version},
+            <if test="user.version != null">
+                version = #{user.version},
             </if>
         </set>
-        where id = #{id}
+        where id = #{user.id}
     </update>
 
     <!--通过主键删除-->

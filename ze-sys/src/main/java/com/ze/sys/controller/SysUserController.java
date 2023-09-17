@@ -49,13 +49,13 @@ public class SysUserController {
     }
 
     /**
-     * 新增数据
+     * 新增数据 可添加未有规范数据插入
      *
      * @param sysUser 实体
      * @return 新增结果
      */
     @PostMapping
-    public ResponseEntity<SysUser> add(SysUser sysUser) {
+    public ResponseEntity<SysUser> add(@RequestBody SysUser sysUser) {
         return ResponseEntity.ok(this.sysUserService.insert(sysUser));
     }
 
@@ -66,18 +66,18 @@ public class SysUserController {
      * @return 编辑结果
      */
     @PutMapping
-    public ResponseEntity<SysUser> edit(SysUser sysUser) {
+    public ResponseEntity<SysUser> edit(@RequestBody SysUser sysUser) {
         return ResponseEntity.ok(this.sysUserService.update(sysUser));
     }
 
     /**
-     * 删除数据
+     * 删除数据 直接删除 不是 逻辑删除
      *
      * @param id 主键
      * @return 删除是否成功
      */
-    @DeleteMapping
-    public ResponseEntity<Boolean> deleteById(Long id) {
+    @DeleteMapping("/{id}")
+    public ResponseEntity<Boolean> deleteById(@PathVariable("id") Long id) {
         return ResponseEntity.ok(this.sysUserService.deleteById(id));
     }
 
