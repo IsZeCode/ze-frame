@@ -1,4 +1,4 @@
-package com.ze.sys.collection;
+package com.ze.sys.controller;
 
 
 import com.ze.bean.Result;
