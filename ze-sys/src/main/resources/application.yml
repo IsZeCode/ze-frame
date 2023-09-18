@@ -64,10 +64,10 @@ swagger:
   version: 1.0版本
   description: 开箱即用的脚手架
 
-# 是否开启缓存预热
+# 是否开启缓存预热 true false
 init:
   cahce:
-    enable: true
+    enable: false
 
 
 
