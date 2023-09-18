@@ -30,6 +30,7 @@ spring:
   redis:
     host: ac9075d576cd.c.methodot.com
     port: 31670
+    # 记得加密码
     password:
     database: 0
     # 可以基于lettuce，也可以基于jedis
@@ -62,3 +63,12 @@ swagger:
   contact-email: 614695876@qq.com
   version: 1.0版本
   description: 开箱即用的脚手架
+
+# 是否开启缓存预热
+init:
+  cahce:
+    enable: true
+
+
+
+
