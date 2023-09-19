@@ -18,6 +18,8 @@ import org.springframework.context.annotation.ComponentScan;
 @EnableCaching
 public class SysApplication {
     public static void main(String[] args) {
+        // 异步日子 集属性
+        System.setProperty("Log4jContextSelector", "org.apache.logging.log4j.core.async.AsyncLoggerContextSelector");
         SpringApplication.run(SysApplication.class, args);
     }
 }
