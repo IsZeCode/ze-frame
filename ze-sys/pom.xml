@@ -36,6 +36,12 @@
             <version>1.0-SNAPSHOT</version>
         </dependency>
 
+        <dependency>
+            <groupId>com.ze</groupId>
+            <artifactId>ze-common-log</artifactId>
+            <version>1.0-SNAPSHOT</version>
+        </dependency>
+
         <!-- ============== 自己的模块要放在上面 ============== -->
 
         <!-- 引入MapStruct依赖，实现实体拷贝 -->
