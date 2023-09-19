@@ -8,6 +8,8 @@ import com.ze.sys.entity.po.SysUserPo;
 import com.ze.sys.entity.req.PageSysUserReq;
 import com.ze.sys.service.SysUserService;
 import org.springframework.beans.BeanUtils;
+import org.springframework.cache.annotation.CacheEvict;
+import org.springframework.cache.annotation.Cacheable;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
@@ -26,12 +28,16 @@ public class SysUserServiceImpl implements SysUserService {
 
     /**
      * 通过ID查询单条数据
+     * Cacheable 添加缓存
      *
      * @param id 主键
      * @return 实例对象
      */
     @Override
+    // 得写在 server 层
+    @Cacheable(cacheNames = "SysUser", key = "'querySysUserById'+#id")
     public SysUser queryById(Long id) {
+        System.out.println("我在找数据库 哦");
         return this.sysUserDao.queryById(id);
     }
 
@@ -81,14 +87,16 @@ public class SysUserServiceImpl implements SysUserService {
 
     /**
      * 修改数据
+     * CacheEvict 清理缓存
      *
      * @param sysUser 实例对象
      * @return 实例对象
      */
     @Override
+    @CacheEvict(cacheNames = "SysUser", key = "'querySysUserById'+#sysUser.id")
     public SysUser update(SysUser sysUser) {
         this.sysUserDao.update(sysUser);
-        return this.queryById(sysUser.getId());
+        return sysUser;
     }
 
     /**
