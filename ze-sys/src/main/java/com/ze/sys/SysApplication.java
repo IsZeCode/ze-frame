@@ -10,7 +10,7 @@ import org.springframework.context.annotation.ComponentScan;
 /**
  * 顺带扫描别的模块的 @Bean  扫描 XX.mapper 以下的 mapper
  */
-@MapperScan(value = "com.ze.*.mapper")
+@MapperScan(value = "com.ze.*.dao")
 @SpringBootApplication
 // 配置类扫描
 @ComponentScan(value = "com.ze")

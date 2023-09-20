@@ -12,6 +12,7 @@
     <modules>
         <module>ze-sys</module>
         <module>ze-common</module>
+        <module>ze-dependencies</module>
     </modules>
 
     <version>1.0-SNAPSHOT</version>

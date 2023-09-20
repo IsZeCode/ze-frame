@@ -3,7 +3,7 @@
         PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
-<mapper namespace="com.ze.sys.mapper.UserMapper">
+<mapper namespace="com.ze.sys.dao.UserMapper">
     <select id="getUserPage" resultType="com.ze.sys.entity.po.UserPo">
         select
         id, name, age, create_by, create_time, update_by, update_time, delete_flag, version

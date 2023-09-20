@@ -6,8 +6,8 @@
 
 <!--    继承父类工程-->
     <parent>
+        <artifactId>ze-common</artifactId>
         <groupId>com.ze</groupId>
-        <artifactId>ze-frame</artifactId>
         <version>1.0-SNAPSHOT</version>
     </parent>
 

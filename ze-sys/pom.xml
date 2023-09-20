@@ -1,66 +1,92 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0"
-         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+<project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xmlns="http://maven.apache.org/POM/4.0.0"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-    <modelVersion>4.0.0</modelVersion>
+
     <parent>
         <groupId>com.ze</groupId>
         <!--   模块名字-->
-        <artifactId>ze-frame</artifactId>
+        <artifactId>ze-dependencies</artifactId>
         <version>1.0-SNAPSHOT</version>
+        <relativePath/>
     </parent>
 
     <!--  工件id  -->
     <artifactId>ze-sys</artifactId>
 
+    <modelVersion>4.0.0</modelVersion>
+
+    <properties>
+        <java.version>1.8</java.version>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <maven.plugin.version>3.1</maven.plugin.version>
+        <maven.compile.source>1.8</maven.compile.source>
+        <maven.compile.target>1.8</maven.compile.target>
+        <ze.common.version>1.0-SNAPSHOT</ze.common.version>
+    </properties>
+
     <dependencies>
-        <!--  导入common-web 模块 -->
+        <dependency>
+            <groupId>com.ze</groupId>
+            <artifactId>ze-common-starter</artifactId>
+            <version>${ze.common.version}</version>
+        </dependency>
         <dependency>
             <groupId>com.ze</groupId>
             <artifactId>ze-common-web</artifactId>
-            <version>1.0-SNAPSHOT</version>
+            <version>${ze.common.version}</version>
         </dependency>
         <dependency>
             <groupId>com.ze</groupId>
             <artifactId>ze-common-mybatisplus</artifactId>
-            <version>1.0-SNAPSHOT</version>
+            <version>${ze.common.version}</version>
         </dependency>
         <dependency>
             <groupId>com.ze</groupId>
             <artifactId>ze-common-swagger</artifactId>
-            <version>1.0-SNAPSHOT</version>
+            <version>${ze.common.version}</version>
         </dependency>
         <dependency>
             <groupId>com.ze</groupId>
             <artifactId>ze-common-redis</artifactId>
-            <version>1.0-SNAPSHOT</version>
+            <version>${ze.common.version}</version>
         </dependency>
-
         <dependency>
             <groupId>com.ze</groupId>
             <artifactId>ze-common-log</artifactId>
-            <version>1.0-SNAPSHOT</version>
+            <version>${ze.common.version}</version>
         </dependency>
-
-        <!-- ============== 自己的模块要放在上面 ============== -->
 
         <!-- 引入MapStruct依赖，实现实体拷贝 -->
         <dependency>
             <groupId>org.mapstruct</groupId>
             <artifactId>mapstruct</artifactId>
-            <version>1.4.2.Final</version>
         </dependency>
         <dependency>
             <groupId>org.mapstruct</groupId>
             <artifactId>mapstruct-processor</artifactId>
-            <version>1.4.2.Final</version>
         </dependency>
     </dependencies>
-
-    <properties>
-        <maven.compiler.source>8</maven.compiler.source>
-        <maven.compiler.target>8</maven.compiler.target>
-        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-    </properties>
-
+    <build>
+        <finalName>ze-sys</finalName><!-- 导出jar的名字 -->
+        <plugins>
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+                <version>${spring.boot.starter.version}</version>
+                <configuration>
+                    <mainClass>com.ze.sys.SysApplication</mainClass>
+                    <!-- 主类的位置，例如上图文件，主类配置应为： -->
+                    <!-- <mainClass>top.nihilwater.App</mainClass> -->
+                </configuration>
+                <executions>
+                    <execution>
+                        <goals>
+                            <goal>repackage</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+        </plugins>
+    </build>
 </project>

@@ -2,27 +2,22 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0"
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-
     <parent>
         <artifactId>ze-common</artifactId>
         <groupId>com.ze</groupId>
         <version>1.0-SNAPSHOT</version>
     </parent>
-    
+
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>ze-common-log</artifactId>
+    <artifactId>ze-common-starter</artifactId>
 
     <dependencies>
         <dependency>
             <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-log4j2</artifactId>
-        </dependency>
-        <!-- 异步日志(引入高性能队列) -->
-        <dependency>
-            <groupId>com.lmax</groupId>
-            <artifactId>disruptor</artifactId>
+            <artifactId>spring-boot-dependencies</artifactId>
+            <version>${spring.boot.starter.version}</version>
+            <type>pom</type>
         </dependency>
     </dependencies>
-
 </project>

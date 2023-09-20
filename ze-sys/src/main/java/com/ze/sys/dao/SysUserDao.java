@@ -1,4 +1,4 @@
-package com.ze.sys.mapper;
+package com.ze.sys.dao;
 
 import com.ze.sys.entity.SysUser;
 import com.ze.sys.entity.po.SysUserPo;

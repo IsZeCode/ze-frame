@@ -5,19 +5,59 @@
 
     <!-- 父项-->
     <parent>
-        <artifactId>ze-frame</artifactId>
+        <artifactId>ze-dependencies</artifactId>
         <groupId>com.ze</groupId>
         <version>1.0-SNAPSHOT</version>
+        <relativePath/>
     </parent>
 
-    <modelVersion>4.0.0</modelVersion>
-
     <artifactId>ze-common</artifactId>
+    <version>1.0-SNAPSHOT</version>
+    <modelVersion>4.0.0</modelVersion>
+    <packaging>pom</packaging>
 
-    <properties>
-        <maven.compiler.source>8</maven.compiler.source>
-        <maven.compiler.target>8</maven.compiler.target>
-        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-    </properties>
+    <modules>
+        <module>ze-common-starter</module>
+        <module>ze-common-web</module>
+        <module>ze-common-mybatisplus</module>
+        <module>ze-common-swagger</module>
+        <module>ze-common-redis</module>
+        <module>ze-common-log</module>
+    </modules>
 
+
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>com.ze</groupId>
+                <artifactId>ze-common-starter</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.ze</groupId>
+                <artifactId>ze-common-mybatisplus</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.ze</groupId>
+                <artifactId>ze-common-redis</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.ze</groupId>
+                <artifactId>ze-common-swagger</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.ze</groupId>
+                <artifactId>ze-common-web</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.ze</groupId>
+                <artifactId>ze-common-log</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
 </project>

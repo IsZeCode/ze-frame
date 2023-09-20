@@ -6,7 +6,7 @@ import com.ze.entity.PageResult;
 import com.ze.sys.entity.dto.UserDto;
 import com.ze.sys.entity.dto.UserPageDto;
 import com.ze.sys.entity.po.UserPo;
-import com.ze.sys.mapper.UserMapper;
+import com.ze.sys.dao.UserMapper;
 import com.ze.sys.service.UserService;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
